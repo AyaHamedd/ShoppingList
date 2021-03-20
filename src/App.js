@@ -1,10 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
-import TodoRow from './TodoRow'
 import { Component } from 'react';
-
-import ItemList from './ItemList'
-
+import './App.css';
+import ItemList from "./ItemList";
 // Components
 // 1) ItemRow (label+checkbox+edit+delete) function
 // 2) ItemsList (list of ItemsRows) function
@@ -18,15 +14,15 @@ import ItemList from './ItemList'
 // Categories : All , completed , active
 class ShoppingList extends Component{
   state = {
-    items: [{id:1 , label: "firstItem", completed: true}],
+    items: [{id:1 , label: "firstItem", completed: false}],
     newItem:"",
-    category: 'all' // any thing else::
+    category: 'completed' // any thing else::
   }
   render(){
     return (
-      <ul>
-        {this.state.items.map((item) => <ItemRow item={item}></ItemRow>)}
-      </ul>
+      <div>
+        <ItemList items={this.state.items} category={this.state.category} ></ItemList>
+      </div>
     )
   }
 }

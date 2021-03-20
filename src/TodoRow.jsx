@@ -1,12 +1,11 @@
-import { render } from "react-dom";
-
-function TodoRow({item}) {
+function TodoRow({ item }) {
   return (
-  <li> <input type="checkbox" /> 
-    {item.label} <button>Delete</button>
+    <li>
+      {" "}
+      <input type="checkbox" />
+      {item.label} <button>Delete</button>
     </li>
-    
-    )
+  );
 }
 
- export default TodoRow;
+export default TodoRow;
