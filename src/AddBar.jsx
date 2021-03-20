@@ -1,2 +1,6 @@
-function AddBar({ newItem }) {}
+function AddBar({ newItem }) {
+    return (<div><input type="text" value = {newItem} onChange = {(e)=>handleTextChange(e.target.value)}/>
+    <button onClick = {(e)=>handleAddItem()}>Add</button>
+    </div>)
+}
 export default AddBar;

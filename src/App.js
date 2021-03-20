@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import AddBar from './AddBar';
 import './App.css';
 import ItemList from "./ItemList";
 // Components
@@ -18,9 +19,18 @@ class ShoppingList extends Component{
     newItem:"",
     category: 'completed' // any thing else::
   }
+  
+  handleTextChange(newText) {
+    this.setState({newItem:newText })
+  }
+  handleAddItem() {
+    this.setState({items:[...this.state.items,{id:Math.random(),label:this.state.newItem,completed:false}],
+  newItem:"" })
+  }
   render(){
     return (
       <div>
+        <AddBar newItem={this.state.newItem}></AddBar>
         <ItemList items={this.state.items} category={this.state.category} ></ItemList>
       </div>
     )
